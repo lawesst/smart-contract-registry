@@ -1,14 +1,18 @@
 # Smart Contract Registry
 
-A public registry of notable smart contract repositories, official documentation, and selected walkthroughs.
+A curated, quality-verified reference of production Ethereum smart contracts.
 
-This repository is a lightweight reference index for studying production-grade onchain systems. It is not a deployable application or contract package.
+It is built for Solidity and Vyper developers who need trustworthy reference implementations they can study, compare, and learn from.
+
+## Why It Exists
+
+There is no single reliable place to find audited, battle-tested smart contracts across the full Ethereum ecosystem, especially once you move beyond OpenZeppelin basics. This registry solves that by collecting production-grade repositories, official documentation, and selected walkthroughs in one place.
 
 ## What You'll Find
 
-- Core protocol repositories grouped by category
-- Links to official documentation for each project
-- Optional walkthrough videos for deeper study
+- Quality-verified contract repositories grouped by category
+- Official documentation for each protocol or library
+- Selected walkthroughs for deeper implementation study
 
 ## Registry
 
