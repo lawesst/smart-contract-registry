@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://smart-contract-registry.dev/schemas/contract.schema.json",
+  "title": "Smart Contract Registry Entry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "slug",
+    "name",
+    "category",
+    "language",
+    "chains",
+    "repositoryUrl",
+    "docsUrl",
+    "summary",
+    "learningFocus",
+    "trustStatus",
+    "verificationStage"
+  ],
+  "properties": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "DEX",
+        "Derivatives",
+        "Escrow",
+        "Lending",
+        "Library",
+        "NFT",
+        "NFT Marketplace",
+        "Restaking",
+        "Stablecoin",
+        "Streaming",
+        "Token",
+        "Yield Farming"
+      ]
+    },
+    "language": {
+      "type": "string",
+      "enum": ["Solidity", "Vyper", "Mixed"]
+    },
+    "chains": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "repositoryUrl": {
+      "type": "string",
+      "format": "uri"
+    },
+    "docsUrl": {
+      "type": "string",
+      "format": "uri"
+    },
+    "walkthroughUrl": {
+      "type": "string",
+      "format": "uri"
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 40,
+      "maxLength": 320
+    },
+    "learningFocus": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 2
+      }
+    },
+    "trustStatus": {
+      "type": "string",
+      "enum": ["researching", "audited", "unaudited", "exploit-history"]
+    },
+    "verificationStage": {
+      "type": "string",
+      "enum": ["seeded", "verified"]
+    }
+  }
+}

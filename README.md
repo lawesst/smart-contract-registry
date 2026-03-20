@@ -1,56 +1,59 @@
 # Smart Contract Registry
 
-A curated, quality-verified reference of production Ethereum smart contracts.
+Smart Contract Registry is a Next.js project for building a curated, quality-verified reference layer for production Ethereum smart contracts.
 
-It is built for Solidity and Vyper developers who need trustworthy reference implementations they can study, compare, and learn from.
+This repository is no longer just a markdown table of links. It now has a real product scaffold, typed contract entries, route structure, contribution docs, and the first pass of a reusable data model.
 
-## Why It Exists
+## What This Repo Contains
 
-There is no single reliable place to find audited, battle-tested smart contracts across the full Ethereum ecosystem, especially once you move beyond OpenZeppelin basics. This registry solves that by collecting production-grade repositories, official documentation, and selected walkthroughs in one place.
+- A Next.js 16 app scaffold in `src/app`
+- A versioned registry dataset in `data/contracts.json`
+- A typed loader in `src/data/contracts.ts`
+- Shared UI components for the registry explorer
+- A contribution route at `src/app/contribute/page.tsx`
+- A schema draft for contract entries in `schemas/contract.schema.json`
+- CI-friendly validation in `scripts/validate-contracts.mjs`
+- The project brief in `docs/project-brief.md`
 
-## What You'll Find
+## Product Direction
 
-- Quality-verified contract repositories grouped by category
-- Official documentation for each protocol or library
-- Selected walkthroughs for deeper implementation study
+- What it is:
+  A curated, quality-verified reference of production Ethereum smart contracts
+- Who it is for:
+  Solidity and Vyper developers who need trustworthy reference implementations
+- What problem it solves:
+  There is no single place to find audited, battle-tested contracts across the ecosystem once you move beyond OpenZeppelin basics
 
-## Registry
+## Local Development
 
-| Protocol             | Category         | Repository                                                  | Documentation                                                             | Walkthrough                                                |
-| -------------------- | ---------------- | ----------------------------------------------------------- | ------------------------------------------------------------------------- | ---------------------------------------------------------- |
-| **Aave**             | Lending          | https://github.com/aave/protocol-v2                         | [Docs](https://docs.aave.com/)                                            | N/A                                                        |
-| **Ajna**             | Lending          | https://github.com/ajna-finance/ajna-core                   | [Docs](https://docs.ajna.finance/)                                        | N/A                                                        |
-| **Art Gobblers**     | NFT              | https://github.com/artgobblers/art-gobblers                 | [Docs](https://www.paradigm.xyz/2022/09/art-gobblers)                     | N/A                                                        |
-| **Balancer V2**      | DEX              | https://github.com/balancer/balancer-v2-monorepo            | [Docs](https://docs.balancer.fi/)                                         | N/A                                                        |
-| **Balancer V3**      | DEX              | https://github.com/balancer/balancer-v3-monorepo            | [Docs](https://docs-v3.balancer.fi/)                                      | N/A                                                        |
-| **Compound**         | Lending          | https://github.com/compound-finance/compound-protocol       | [Docs](https://compound.finance/docs)                                     | N/A                                                        |
-| **Conditional Tokens** | Token          | https://github.com/gnosis/conditional-tokens-contracts      | [Docs](https://conditional-tokens.readthedocs.io/en/latest/index.html)    | N/A                                                        |
-| **Curve**            | DEX              | https://github.com/curvefi/curve-contract                   | [Docs](https://docs.curve.fi/)                                            | N/A                                                        |
-| **EigenLayer**       | Restaking        | https://github.com/Layr-Labs/eigenlayer-contracts           | [Docs](https://docs.eigenlayer.xyz)                                       | N/A                                                        |
-| **MakerDAO**         | Stablecoin       | https://github.com/makerdao/dss                             | [Docs](https://docs.makerdao.com/)                                        | N/A                                                        |
-| **Maple**            | Lending          | https://github.com/maple-labs/maple-core-v2                 | [Docs](https://docs.maple.finance/)                                       | [YouTube](https://www.youtube.com/watch?v=nG_QTMGVL3U&t=2358s) |
-| **Merit**            | Escrow           | https://github.com/Merit-Systems/contracts                  | [Docs](https://www.merit.systems/docs)                                    | [YouTube](https://www.youtube.com/watch?v=-Lqn4mx8eRY)     |
-| **Morpho**           | Lending          | https://github.com/morpho-org/morpho-blue                   | [Docs](https://docs.morpho.org/)                                          | N/A                                                        |
-| **Sablier V2**       | Streaming        | https://github.com/sablier-labs/v2-core                     | [Docs](https://docs.sablier.com)                                          | [YouTube](https://www.youtube.com/watch?v=Mh0akz5ybZ8&t=11s) |
-| **Seaport**          | NFT Marketplace  | https://github.com/ProjectOpenSea/seaport                   | [Docs](https://docs.opensea.io/v2.0/reference/seaport-overview)           | [YouTube](https://www.youtube.com/watch?v=mvRrRV_eNLQ)     |
-| **snekmate**         | Library          | https://github.com/pcaversaccio/snekmate                    | [Docs](https://github.com/pcaversaccio/snekmate#readme)                   | N/A                                                        |
-| **Solady**           | Library          | https://github.com/Vectorized/solady                        | [Docs](https://github.com/Vectorized/solady#readme)                       | N/A                                                        |
-| **Solmate**          | Library          | https://github.com/transmissions11/solmate                  | [Docs](https://github.com/transmissions11/solmate#readme)                 | N/A                                                        |
-| **Synthetix**        | Derivatives      | https://github.com/Synthetixio/synthetix                    | [Docs](https://docs.synthetix.io/)                                        | N/A                                                        |
-| **Uniswap V2**       | DEX              | https://github.com/Uniswap/uniswap-v2-core                  | [Docs](https://docs.uniswap.org/)                                         | N/A                                                        |
-| **Uniswap V3**       | DEX              | https://github.com/Uniswap/v3-core                          | [Docs](https://docs.uniswap.org/protocol/V3/introduction)                 | N/A                                                        |
-| **Uniswap V4**       | DEX              | https://github.com/Uniswap/v4-core                          | [Docs](https://docs.uniswap.org/contracts/v4/overview)                    | N/A                                                        |
-| **Yearn V3**         | Yield Farming    | https://github.com/yearn/yearn-vaults-v3                    | [Docs](https://docs.yearn.fi/developers/v3/overview)                      | N/A                                                        |
+```bash
+npm install
+npm run validate-data
+npm run dev
+```
 
-## Contributing
+Then open `http://localhost:3000`.
 
-Pull requests are welcome for:
+## Current State
 
-- adding missing protocols
-- fixing broken links
-- improving categories and naming
-- attaching better documentation references
+The current dataset is a structured seed layer built from the original contract list and stored as versioned JSON. It is already searchable and filterable in the app, and now has a validation path before merge, but deeper security metadata, deployment addresses, and onchain usage stats still need to be normalized before the registry can claim full quality verification.
+
+## Key Routes
+
+- `/`
+  Product landing page and searchable registry explorer
+- `/contracts/[slug]`
+  Individual contract entry pages
+- `/contribute`
+  Contribution principles and required entry fields
+
+## Near-Term Build Priorities
+
+1. Add audit metadata and trust badge criteria to each contract.
+2. Introduce deployment addresses and onchain usage signals.
+3. Expand the schema for exploit history, bug bounties, and audit dates.
+4. Add contributor templates and review automation.
 
 ## License
 
-Provided as-is.
+MIT

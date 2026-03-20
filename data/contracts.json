@@ -1,0 +1,470 @@
+[
+  {
+    "slug": "aave",
+    "name": "Aave",
+    "category": "Lending",
+    "language": "Solidity",
+    "chains": [
+      "Ethereum",
+      "Polygon",
+      "Arbitrum",
+      "Optimism",
+      "Avalanche"
+    ],
+    "repositoryUrl": "https://github.com/aave/protocol-v2",
+    "docsUrl": "https://docs.aave.com/",
+    "summary": "Peer-to-pool lending markets with collateralized borrowing, reserve accounting, and liquidation mechanics that shaped the category.",
+    "learningFocus": [
+      "reserve accounting",
+      "interest rate strategies",
+      "liquidation flow"
+    ],
+    "trustStatus": "researching",
+    "verificationStage": "seeded"
+  },
+  {
+    "slug": "ajna",
+    "name": "Ajna",
+    "category": "Lending",
+    "language": "Solidity",
+    "chains": [
+      "Ethereum"
+    ],
+    "repositoryUrl": "https://github.com/ajna-finance/ajna-core",
+    "docsUrl": "https://docs.ajna.finance/",
+    "summary": "A governance-minimized lending system built around bucketed liquidity and price discovery instead of mutable market parameters.",
+    "learningFocus": [
+      "bucket-based price discovery",
+      "immutable market design",
+      "auction liquidations"
+    ],
+    "trustStatus": "researching",
+    "verificationStage": "seeded"
+  },
+  {
+    "slug": "art-gobblers",
+    "name": "Art Gobblers",
+    "category": "NFT",
+    "language": "Solidity",
+    "chains": [
+      "Ethereum"
+    ],
+    "repositoryUrl": "https://github.com/artgobblers/art-gobblers",
+    "docsUrl": "https://www.paradigm.xyz/2022/09/art-gobblers",
+    "summary": "An NFT ecosystem that pairs mint mechanics with VRGDA pricing and onchain media primitives.",
+    "learningFocus": [
+      "VRGDA pricing",
+      "NFT mint economics",
+      "onchain art mechanics"
+    ],
+    "trustStatus": "researching",
+    "verificationStage": "seeded"
+  },
+  {
+    "slug": "balancer-v2",
+    "name": "Balancer V2",
+    "category": "DEX",
+    "language": "Solidity",
+    "chains": [
+      "Ethereum",
+      "Arbitrum",
+      "Optimism",
+      "Polygon",
+      "Base"
+    ],
+    "repositoryUrl": "https://github.com/balancer/balancer-v2-monorepo",
+    "docsUrl": "https://docs.balancer.fi/",
+    "summary": "A vault-centric AMM architecture that centralizes token accounting while letting multiple pool types plug into shared infrastructure.",
+    "learningFocus": [
+      "vault architecture",
+      "custom pool math",
+      "internal balances"
+    ],
+    "trustStatus": "researching",
+    "verificationStage": "seeded"
+  },
+  {
+    "slug": "balancer-v3",
+    "name": "Balancer V3",
+    "category": "DEX",
+    "language": "Solidity",
+    "chains": [
+      "Ethereum",
+      "Arbitrum",
+      "Base"
+    ],
+    "repositoryUrl": "https://github.com/balancer/balancer-v3-monorepo",
+    "docsUrl": "https://docs-v3.balancer.fi/",
+    "summary": "The next Balancer iteration, focused on a more modular pool system and cleaner execution surfaces around the shared vault model.",
+    "learningFocus": [
+      "modular pool design",
+      "vault reuse",
+      "pool specialization"
+    ],
+    "trustStatus": "researching",
+    "verificationStage": "seeded"
+  },
+  {
+    "slug": "compound",
+    "name": "Compound",
+    "category": "Lending",
+    "language": "Solidity",
+    "chains": [
+      "Ethereum"
+    ],
+    "repositoryUrl": "https://github.com/compound-finance/compound-protocol",
+    "docsUrl": "https://compound.finance/docs",
+    "summary": "One of the canonical money market codebases, built around cTokens, market risk parameters, and liquidation incentives.",
+    "learningFocus": [
+      "cToken accounting",
+      "comptroller risk checks",
+      "liquidation incentives"
+    ],
+    "trustStatus": "researching",
+    "verificationStage": "seeded"
+  },
+  {
+    "slug": "conditional-tokens",
+    "name": "Conditional Tokens",
+    "category": "Token",
+    "language": "Solidity",
+    "chains": [
+      "Ethereum",
+      "Gnosis"
+    ],
+    "repositoryUrl": "https://github.com/gnosis/conditional-tokens-contracts",
+    "docsUrl": "https://conditional-tokens.readthedocs.io/en/latest/index.html",
+    "summary": "A composable primitive for outcome-based tokenization, useful for prediction markets, resolution systems, and ERC-1155 positions.",
+    "learningFocus": [
+      "ERC-1155 positions",
+      "outcome splitting",
+      "resolution logic"
+    ],
+    "trustStatus": "researching",
+    "verificationStage": "seeded"
+  },
+  {
+    "slug": "curve",
+    "name": "Curve",
+    "category": "DEX",
+    "language": "Mixed",
+    "chains": [
+      "Ethereum",
+      "Arbitrum",
+      "Optimism",
+      "Polygon"
+    ],
+    "repositoryUrl": "https://github.com/curvefi/curve-contract",
+    "docsUrl": "https://docs.curve.fi/",
+    "summary": "The reference implementation for stable-swap style liquidity pools, with specialized invariants and a long operational history.",
+    "learningFocus": [
+      "stable-swap invariant",
+      "factory deployments",
+      "fee routing"
+    ],
+    "trustStatus": "researching",
+    "verificationStage": "seeded"
+  },
+  {
+    "slug": "eigenlayer",
+    "name": "EigenLayer",
+    "category": "Restaking",
+    "language": "Solidity",
+    "chains": [
+      "Ethereum"
+    ],
+    "repositoryUrl": "https://github.com/Layr-Labs/eigenlayer-contracts",
+    "docsUrl": "https://docs.eigenlayer.xyz",
+    "summary": "Restaking infrastructure for delegating economic security, built around operators, strategy positions, and withdrawal queues.",
+    "learningFocus": [
+      "restaking flows",
+      "operator delegation",
+      "withdrawal queues"
+    ],
+    "trustStatus": "researching",
+    "verificationStage": "seeded"
+  },
+  {
+    "slug": "makerdao",
+    "name": "MakerDAO",
+    "category": "Stablecoin",
+    "language": "Solidity",
+    "chains": [
+      "Ethereum"
+    ],
+    "repositoryUrl": "https://github.com/makerdao/dss",
+    "docsUrl": "https://docs.makerdao.com/",
+    "summary": "A deeply modular stablecoin system with collateral vaults, rate modules, liquidations, and governance-controlled accounting.",
+    "learningFocus": [
+      "vault architecture",
+      "liquidation auctions",
+      "module composition"
+    ],
+    "trustStatus": "researching",
+    "verificationStage": "seeded"
+  },
+  {
+    "slug": "maple",
+    "name": "Maple",
+    "category": "Lending",
+    "language": "Solidity",
+    "chains": [
+      "Ethereum"
+    ],
+    "repositoryUrl": "https://github.com/maple-labs/maple-core-v2",
+    "docsUrl": "https://docs.maple.finance/",
+    "walkthroughUrl": "https://www.youtube.com/watch?v=nG_QTMGVL3U&t=2358s",
+    "summary": "A credit-focused lending system for pooled capital, specialized roles, and offchain-underwritten loan origination.",
+    "learningFocus": [
+      "pool delegate roles",
+      "credit market structure",
+      "loan lifecycle state"
+    ],
+    "trustStatus": "researching",
+    "verificationStage": "seeded"
+  },
+  {
+    "slug": "merit",
+    "name": "Merit",
+    "category": "Escrow",
+    "language": "Solidity",
+    "chains": [
+      "Ethereum"
+    ],
+    "repositoryUrl": "https://github.com/Merit-Systems/contracts",
+    "docsUrl": "https://www.merit.systems/docs",
+    "walkthroughUrl": "https://www.youtube.com/watch?v=-Lqn4mx8eRY",
+    "summary": "Escrow-focused contract flows designed around conditional releases, execution milestones, and clearly separated permissions.",
+    "learningFocus": [
+      "escrow release logic",
+      "authorization boundaries",
+      "milestone settlement"
+    ],
+    "trustStatus": "researching",
+    "verificationStage": "seeded"
+  },
+  {
+    "slug": "morpho",
+    "name": "Morpho",
+    "category": "Lending",
+    "language": "Solidity",
+    "chains": [
+      "Ethereum",
+      "Base"
+    ],
+    "repositoryUrl": "https://github.com/morpho-org/morpho-blue",
+    "docsUrl": "https://docs.morpho.org/",
+    "summary": "A lending primitive built around isolated markets, parameter immutability, and highly reusable core components.",
+    "learningFocus": [
+      "isolated markets",
+      "market parameter design",
+      "minimal core contracts"
+    ],
+    "trustStatus": "researching",
+    "verificationStage": "seeded"
+  },
+  {
+    "slug": "sablier-v2",
+    "name": "Sablier V2",
+    "category": "Streaming",
+    "language": "Solidity",
+    "chains": [
+      "Ethereum",
+      "Arbitrum",
+      "Optimism",
+      "Base",
+      "Polygon"
+    ],
+    "repositoryUrl": "https://github.com/sablier-labs/v2-core",
+    "docsUrl": "https://docs.sablier.com",
+    "walkthroughUrl": "https://www.youtube.com/watch?v=Mh0akz5ybZ8&t=11s",
+    "summary": "Token streaming infrastructure for vesting and continuous payments, with stream lifecycle controls and schedule abstractions.",
+    "learningFocus": [
+      "stream accounting",
+      "vesting schedules",
+      "recipient permissions"
+    ],
+    "trustStatus": "researching",
+    "verificationStage": "seeded"
+  },
+  {
+    "slug": "seaport",
+    "name": "Seaport",
+    "category": "NFT Marketplace",
+    "language": "Solidity",
+    "chains": [
+      "Ethereum",
+      "Polygon"
+    ],
+    "repositoryUrl": "https://github.com/ProjectOpenSea/seaport",
+    "docsUrl": "https://docs.opensea.io/v2.0/reference/seaport-overview",
+    "walkthroughUrl": "https://www.youtube.com/watch?v=mvRrRV_eNLQ",
+    "summary": "A generalized marketplace protocol with flexible order structures, fulfillment strategies, and signature-heavy execution paths.",
+    "learningFocus": [
+      "order fulfillment",
+      "signature validation",
+      "marketplace composability"
+    ],
+    "trustStatus": "researching",
+    "verificationStage": "seeded"
+  },
+  {
+    "slug": "snekmate",
+    "name": "snekmate",
+    "category": "Library",
+    "language": "Vyper",
+    "chains": [
+      "EVM-compatible"
+    ],
+    "repositoryUrl": "https://github.com/pcaversaccio/snekmate",
+    "docsUrl": "https://github.com/pcaversaccio/snekmate#readme",
+    "summary": "A Vyper utility library that gives developers audited-style building blocks outside the Solidity-first tooling ecosystem.",
+    "learningFocus": [
+      "Vyper library design",
+      "reusable utilities",
+      "minimal abstractions"
+    ],
+    "trustStatus": "researching",
+    "verificationStage": "seeded"
+  },
+  {
+    "slug": "solady",
+    "name": "Solady",
+    "category": "Library",
+    "language": "Solidity",
+    "chains": [
+      "EVM-compatible"
+    ],
+    "repositoryUrl": "https://github.com/Vectorized/solady",
+    "docsUrl": "https://github.com/Vectorized/solady#readme",
+    "summary": "A low-level Solidity utility library that prioritizes gas efficiency and pragmatic building blocks for modern EVM development.",
+    "learningFocus": [
+      "gas-optimized primitives",
+      "assembly patterns",
+      "lean utility design"
+    ],
+    "trustStatus": "researching",
+    "verificationStage": "seeded"
+  },
+  {
+    "slug": "solmate",
+    "name": "Solmate",
+    "category": "Library",
+    "language": "Solidity",
+    "chains": [
+      "EVM-compatible"
+    ],
+    "repositoryUrl": "https://github.com/transmissions11/solmate",
+    "docsUrl": "https://github.com/transmissions11/solmate#readme",
+    "summary": "A minimalist Solidity library that influenced a generation of modern contract patterns and gas-conscious utility design.",
+    "learningFocus": [
+      "minimal ERC implementations",
+      "gas-conscious patterns",
+      "developer ergonomics"
+    ],
+    "trustStatus": "researching",
+    "verificationStage": "seeded"
+  },
+  {
+    "slug": "synthetix",
+    "name": "Synthetix",
+    "category": "Derivatives",
+    "language": "Solidity",
+    "chains": [
+      "Ethereum",
+      "Optimism"
+    ],
+    "repositoryUrl": "https://github.com/Synthetixio/synthetix",
+    "docsUrl": "https://docs.synthetix.io/",
+    "summary": "A derivatives protocol with debt pools, synthetic asset issuance, and a long-lived governance-driven system design.",
+    "learningFocus": [
+      "debt pool accounting",
+      "synthetic issuance",
+      "governance-controlled modules"
+    ],
+    "trustStatus": "researching",
+    "verificationStage": "seeded"
+  },
+  {
+    "slug": "uniswap-v2",
+    "name": "Uniswap V2",
+    "category": "DEX",
+    "language": "Solidity",
+    "chains": [
+      "EVM-compatible"
+    ],
+    "repositoryUrl": "https://github.com/Uniswap/uniswap-v2-core",
+    "docsUrl": "https://docs.uniswap.org/",
+    "summary": "The canonical constant-product AMM implementation, widely studied for pair math, LP accounting, and swap fee mechanics.",
+    "learningFocus": [
+      "constant-product AMM",
+      "LP share accounting",
+      "pair-level execution"
+    ],
+    "trustStatus": "researching",
+    "verificationStage": "seeded"
+  },
+  {
+    "slug": "uniswap-v3",
+    "name": "Uniswap V3",
+    "category": "DEX",
+    "language": "Solidity",
+    "chains": [
+      "Ethereum",
+      "Arbitrum",
+      "Optimism",
+      "Polygon",
+      "Base"
+    ],
+    "repositoryUrl": "https://github.com/Uniswap/v3-core",
+    "docsUrl": "https://docs.uniswap.org/protocol/V3/introduction",
+    "summary": "Concentrated liquidity AMM design with ticks, positions, and price movement math that redefined DEX architecture.",
+    "learningFocus": [
+      "ticks and liquidity ranges",
+      "position NFTs",
+      "price math"
+    ],
+    "trustStatus": "researching",
+    "verificationStage": "seeded"
+  },
+  {
+    "slug": "uniswap-v4",
+    "name": "Uniswap V4",
+    "category": "DEX",
+    "language": "Solidity",
+    "chains": [
+      "Ethereum"
+    ],
+    "repositoryUrl": "https://github.com/Uniswap/v4-core",
+    "docsUrl": "https://docs.uniswap.org/contracts/v4/overview",
+    "summary": "A hook-driven AMM design that externalizes custom behavior while keeping core settlement and pool logic compact.",
+    "learningFocus": [
+      "hook architecture",
+      "pool manager design",
+      "custom swap behavior"
+    ],
+    "trustStatus": "researching",
+    "verificationStage": "seeded"
+  },
+  {
+    "slug": "yearn-v3",
+    "name": "Yearn V3",
+    "category": "Yield Farming",
+    "language": "Solidity",
+    "chains": [
+      "Ethereum",
+      "Arbitrum",
+      "Base"
+    ],
+    "repositoryUrl": "https://github.com/yearn/yearn-vaults-v3",
+    "docsUrl": "https://docs.yearn.fi/developers/v3/overview",
+    "summary": "Vault infrastructure for strategy-based yield aggregation, built around accounting discipline and role-based operational controls.",
+    "learningFocus": [
+      "vault accounting",
+      "strategy hooks",
+      "role-based controls"
+    ],
+    "trustStatus": "researching",
+    "verificationStage": "seeded"
+  }
+]
