@@ -87,6 +87,141 @@
     "verificationStage": {
       "type": "string",
       "enum": ["seeded", "verified"]
+    },
+    "trustSummary": {
+      "type": "string",
+      "minLength": 40,
+      "maxLength": 420
+    },
+    "auditReports": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["auditor", "reportUrl"],
+        "properties": {
+          "auditor": {
+            "type": "string",
+            "minLength": 2
+          },
+          "date": {
+            "type": "string",
+            "pattern": "^[0-9]{4}(-[0-9]{2}(-[0-9]{2})?)?$"
+          },
+          "reportUrl": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    },
+    "deploymentAddresses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["chain", "address", "sourceUrl"],
+        "properties": {
+          "chain": {
+            "type": "string",
+            "minLength": 1
+          },
+          "address": {
+            "type": "string",
+            "pattern": "^0x[a-fA-F0-9]{40}$"
+          },
+          "sourceUrl": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    },
+    "bugBountyUrl": {
+      "type": "string",
+      "format": "uri"
+    },
+    "incidentHistory": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["title", "date", "summary", "sourceUrl"],
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 4
+          },
+          "date": {
+            "type": "string",
+            "pattern": "^[0-9]{4}(-[0-9]{2}(-[0-9]{2})?)?$"
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 20,
+            "maxLength": 240
+          },
+          "sourceUrl": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    },
+    "sourceLinks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["label", "url"],
+        "properties": {
+          "label": {
+            "type": "string",
+            "minLength": 2
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "verificationStage": {
+            "const": "verified"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "trustSummary",
+          "auditReports",
+          "deploymentAddresses",
+          "sourceLinks"
+        ],
+        "properties": {
+          "trustSummary": {
+            "type": "string",
+            "minLength": 40
+          },
+          "auditReports": {
+            "type": "array",
+            "minItems": 1
+          },
+          "deploymentAddresses": {
+            "type": "array",
+            "minItems": 1
+          },
+          "sourceLinks": {
+            "type": "array",
+            "minItems": 2
+          }
+        }
+      }
+    }
+  ]
 }

@@ -2,7 +2,18 @@
 
 Smart Contract Registry is a Next.js project for building a curated, quality-verified reference layer for production Ethereum smart contracts.
 
-This repository is no longer just a markdown table of links. It now has a real product scaffold, typed contract entries, route structure, contribution docs, and the first pass of a reusable data model.
+This repository is no longer a markdown list of links. It now ships a live MVP with search, filters, detail pages, schema-validated data, and a verified flagship layer backed by official audits, deployment sources, and trust notes.
+
+## Current MVP
+
+The live MVP target for this repository is a public registry experience with:
+
+- full-text search across protocol names, categories, summaries, chains, and learning focus
+- filters for category, language, chain, and audit status
+- contract cards with GitHub and documentation links
+- static detail pages for every contract entry
+- verified flagship pages with audit reports, deployment addresses, source links, and security context
+- repo-backed JSON data with schema validation and CI enforcement
 
 ## What This Repo Contains
 
@@ -10,6 +21,7 @@ This repository is no longer just a markdown table of links. It now has a real p
 - A versioned registry dataset in `data/contracts.json`
 - A typed loader in `src/data/contracts.ts`
 - Shared UI components for the registry explorer
+- An About route in `src/app/about/page.tsx`
 - A contribution route at `src/app/contribute/page.tsx`
 - A schema draft for contract entries in `schemas/contract.schema.json`
 - CI-friendly validation in `scripts/validate-contracts.mjs`
@@ -36,22 +48,29 @@ Then open `http://localhost:3000`.
 
 ## Current State
 
-The current dataset is a structured seed layer built from the original contract list and stored as versioned JSON. It is already searchable and filterable in the app, and now has a validation path before merge, but deeper security metadata, deployment addresses, and onchain usage stats still need to be normalized before the registry can claim full quality verification.
+The current dataset combines two layers:
+
+- a broad seed layer that keeps ecosystem coverage intact
+- a verified flagship layer for contracts with source-backed audits, deployments, and trust summaries
+
+The product is already useful as a searchable reference. The next stage is expanding the verified layer, not rebuilding the foundation.
 
 ## Key Routes
 
 - `/`
   Product landing page and searchable registry explorer
 - `/contracts/[slug]`
-  Individual contract entry pages
+  Individual contract entry pages with trust packets for verified entries
+- `/about`
+  Product framing, verification model, and current MVP scope
 - `/contribute`
-  Contribution principles and required entry fields
+  Contribution principles, required entry fields, and verification packet fields
 
 ## Near-Term Build Priorities
 
-1. Add audit metadata and trust badge criteria to each contract.
-2. Introduce deployment addresses and onchain usage signals.
-3. Expand the schema for exploit history, bug bounties, and audit dates.
+1. Expand the number of verified flagship entries from the current core set.
+2. Add more deployment coverage across chains for already-verified protocols.
+3. Normalize onchain usage signals and ranking-friendly metadata.
 4. Add contributor templates and review automation.
 
 ## License

@@ -29,6 +29,30 @@ export type ContractLanguage = (typeof contractLanguages)[number];
 export type TrustStatus = (typeof trustStatuses)[number];
 export type VerificationStage = (typeof verificationStages)[number];
 
+export type ContractAuditReport = {
+  auditor: string;
+  date?: string;
+  reportUrl: string;
+};
+
+export type ContractDeployment = {
+  chain: string;
+  address: string;
+  sourceUrl: string;
+};
+
+export type ContractIncident = {
+  title: string;
+  date: string;
+  summary: string;
+  sourceUrl: string;
+};
+
+export type ContractSourceLink = {
+  label: string;
+  url: string;
+};
+
 export type ContractRecord = {
   slug: string;
   name: string;
@@ -42,4 +66,10 @@ export type ContractRecord = {
   learningFocus: string[];
   trustStatus: TrustStatus;
   verificationStage: VerificationStage;
+  trustSummary?: string;
+  auditReports?: ContractAuditReport[];
+  deploymentAddresses?: ContractDeployment[];
+  bugBountyUrl?: string;
+  incidentHistory?: ContractIncident[];
+  sourceLinks?: ContractSourceLink[];
 };

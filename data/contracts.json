@@ -1,7 +1,7 @@
 [
   {
     "slug": "aave",
-    "name": "Aave",
+    "name": "Aave V3",
     "category": "Lending",
     "language": "Solidity",
     "chains": [
@@ -11,16 +11,55 @@
       "Optimism",
       "Avalanche"
     ],
-    "repositoryUrl": "https://github.com/aave/protocol-v2",
-    "docsUrl": "https://docs.aave.com/",
-    "summary": "Peer-to-pool lending markets with collateralized borrowing, reserve accounting, and liquidation mechanics that shaped the category.",
+    "repositoryUrl": "https://github.com/aave/aave-v3-core",
+    "docsUrl": "https://aave.com/docs",
+    "summary": "Peer-to-pool lending markets with collateralized borrowing, reserve accounting, and liquidation mechanics that shaped modern DeFi money markets.",
     "learningFocus": [
       "reserve accounting",
       "interest rate strategies",
       "liquidation flow"
     ],
-    "trustStatus": "researching",
-    "verificationStage": "seeded"
+    "trustStatus": "audited",
+    "verificationStage": "verified",
+    "trustSummary": "This entry is promoted to verified because the official Aave V3 repo publishes multiple third-party audits, and the official address book publishes the Ethereum mainnet Pool address used by integrations.",
+    "auditReports": [
+      {
+        "auditor": "OpenZeppelin",
+        "date": "2021-11-01",
+        "reportUrl": "https://raw.githubusercontent.com/aave/aave-v3-core/master/audits/01-11-2021_OpenZeppelin_AaveV3.pdf"
+      },
+      {
+        "auditor": "Trail of Bits",
+        "date": "2022-01-07",
+        "reportUrl": "https://raw.githubusercontent.com/aave/aave-v3-core/master/audits/07-01-2022_TrailOfBits_AaveV3.pdf"
+      },
+      {
+        "auditor": "ABDK",
+        "date": "2022-01-27",
+        "reportUrl": "https://raw.githubusercontent.com/aave/aave-v3-core/master/audits/27-01-2022_ABDK_AaveV3.pdf"
+      }
+    ],
+    "deploymentAddresses": [
+      {
+        "chain": "Ethereum",
+        "address": "0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2",
+        "sourceUrl": "https://raw.githubusercontent.com/bgd-labs/aave-address-book/main/src/AaveV3Ethereum.sol"
+      }
+    ],
+    "sourceLinks": [
+      {
+        "label": "Aave V3 audit bundle",
+        "url": "https://github.com/aave/aave-v3-core/tree/master/audits"
+      },
+      {
+        "label": "Aave Ethereum address book",
+        "url": "https://github.com/bgd-labs/aave-address-book/blob/main/src/AaveV3Ethereum.sol"
+      },
+      {
+        "label": "Aave developer docs",
+        "url": "https://aave.com/docs"
+      }
+    ]
   },
   {
     "slug": "ajna",
@@ -155,15 +194,52 @@
       "Polygon"
     ],
     "repositoryUrl": "https://github.com/curvefi/curve-contract",
-    "docsUrl": "https://docs.curve.fi/",
+    "docsUrl": "https://docs.curve.finance/",
     "summary": "The reference implementation for stable-swap style liquidity pools, with specialized invariants and a long operational history.",
     "learningFocus": [
       "stable-swap invariant",
       "factory deployments",
       "fee routing"
     ],
-    "trustStatus": "researching",
-    "verificationStage": "seeded"
+    "trustStatus": "exploit-history",
+    "verificationStage": "verified",
+    "trustSummary": "Curve remains worth studying because the canonical pool repo publishes onchain deployment data and official audit material, but this entry stays flagged as exploit history because Curve's own security retrospective notes that prior reentrancy issues affected the protocol.",
+    "auditReports": [
+      {
+        "auditor": "Trail of Bits",
+        "date": "2020",
+        "reportUrl": "https://docs.curve.finance/assets/pdf/audits/curve-dao-ToB-final.pdf"
+      }
+    ],
+    "deploymentAddresses": [
+      {
+        "chain": "Ethereum",
+        "address": "0xbebc44782c7db0a1a60cb6fe97d0b483032ff1c7",
+        "sourceUrl": "https://raw.githubusercontent.com/curvefi/curve-contract/master/contracts/pools/3pool/pooldata.json"
+      }
+    ],
+    "incidentHistory": [
+      {
+        "title": "Curve retrospective on prior reentrancy incidents",
+        "date": "2025",
+        "summary": "Curve's own Vyper security retrospective says read-only reentrancy has affected Curve in the past, so the registry keeps this entry tagged with exploit history.",
+        "sourceUrl": "https://news.curve.finance/state-of-vyper-curve-smart-contracts/"
+      }
+    ],
+    "sourceLinks": [
+      {
+        "label": "Curve contract repo README",
+        "url": "https://github.com/curvefi/curve-contract/blob/master/README.md"
+      },
+      {
+        "label": "Curve 3pool deployment data",
+        "url": "https://github.com/curvefi/curve-contract/blob/master/contracts/pools/3pool/pooldata.json"
+      },
+      {
+        "label": "Curve Vyper security retrospective",
+        "url": "https://news.curve.finance/state-of-vyper-curve-smart-contracts/"
+      }
+    ]
   },
   {
     "slug": "eigenlayer",
@@ -181,8 +257,47 @@
       "operator delegation",
       "withdrawal queues"
     ],
-    "trustStatus": "researching",
-    "verificationStage": "seeded"
+    "trustStatus": "audited",
+    "verificationStage": "verified",
+    "trustSummary": "EigenLayer is verified here from primary sources because the official README publishes current mainnet deployment addresses, and the official audits directory contains repeated external reviews across mainnet, rewards, and slashing releases.",
+    "auditReports": [
+      {
+        "auditor": "Sigma Prime",
+        "date": "2025-02",
+        "reportUrl": "https://raw.githubusercontent.com/Layr-Labs/eigenlayer-contracts/main/audits/V1.0.0%20(Slashing)%20-%20Sigma%20Prime%20-%20Feb%202025.pdf"
+      },
+      {
+        "auditor": "Certora",
+        "date": "2025-02",
+        "reportUrl": "https://raw.githubusercontent.com/Layr-Labs/eigenlayer-contracts/main/audits/V1.0.0%20(Slashing)%20-%20Certora%20-%20Feb%202025.pdf"
+      },
+      {
+        "auditor": "Cantina",
+        "date": "2025-03",
+        "reportUrl": "https://raw.githubusercontent.com/Layr-Labs/eigenlayer-contracts/main/audits/V1.0.0%20(Slashing)%20-%20Cantina%20%20-%20March%202025.pdf"
+      }
+    ],
+    "deploymentAddresses": [
+      {
+        "chain": "Ethereum",
+        "address": "0x39053D51B77DC0d36036Fc1fCc8Cb819df8Ef37A",
+        "sourceUrl": "https://raw.githubusercontent.com/Layr-Labs/eigenlayer-contracts/main/README.md"
+      }
+    ],
+    "sourceLinks": [
+      {
+        "label": "EigenLayer deployments README",
+        "url": "https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/README.md"
+      },
+      {
+        "label": "EigenLayer audit reports",
+        "url": "https://github.com/Layr-Labs/eigenlayer-contracts/tree/main/audits"
+      },
+      {
+        "label": "EigenLayer docs",
+        "url": "https://docs.eigenlayer.xyz"
+      }
+    ]
   },
   {
     "slug": "makerdao",
@@ -245,7 +360,7 @@
   },
   {
     "slug": "morpho",
-    "name": "Morpho",
+    "name": "Morpho Blue",
     "category": "Lending",
     "language": "Solidity",
     "chains": [
@@ -253,19 +368,59 @@
       "Base"
     ],
     "repositoryUrl": "https://github.com/morpho-org/morpho-blue",
-    "docsUrl": "https://docs.morpho.org/",
+    "docsUrl": "https://legacy.docs.morpho.org/addresses/",
     "summary": "A lending primitive built around isolated markets, parameter immutability, and highly reusable core components.",
     "learningFocus": [
       "isolated markets",
       "market parameter design",
       "minimal core contracts"
     ],
-    "trustStatus": "researching",
-    "verificationStage": "seeded"
+    "trustStatus": "audited",
+    "verificationStage": "verified",
+    "trustSummary": "Morpho Blue is verified from first-party sources because the core repo ships the audit pack directly, and Morpho's docs expose the public addressbook, bug bounty, and security review navigation for the production system.",
+    "auditReports": [
+      {
+        "auditor": "OpenZeppelin",
+        "date": "2023-10-13",
+        "reportUrl": "https://raw.githubusercontent.com/morpho-org/morpho-blue/main/audits/2023-10-13-morpho-blue-and-speed-jump-irm-open-zeppelin.pdf"
+      },
+      {
+        "auditor": "Cantina",
+        "date": "2023-11-13",
+        "reportUrl": "https://raw.githubusercontent.com/morpho-org/morpho-blue/main/audits/2023-11-13-morpho-blue-cantina-managed-review.pdf"
+      },
+      {
+        "auditor": "Cantina Competition",
+        "date": "2024-01-05",
+        "reportUrl": "https://raw.githubusercontent.com/morpho-org/morpho-blue/main/audits/2024-01-05-morpho-blue-cantina-competition.pdf"
+      }
+    ],
+    "deploymentAddresses": [
+      {
+        "chain": "Ethereum",
+        "address": "0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb",
+        "sourceUrl": "https://legacy.docs.morpho.org/addresses/"
+      }
+    ],
+    "bugBountyUrl": "https://legacy.docs.morpho.org/faq/",
+    "sourceLinks": [
+      {
+        "label": "Morpho addressbook",
+        "url": "https://legacy.docs.morpho.org/addresses/"
+      },
+      {
+        "label": "Morpho security reviews",
+        "url": "https://legacy.docs.morpho.org/security-reviews/"
+      },
+      {
+        "label": "Morpho FAQ and bug bounty",
+        "url": "https://legacy.docs.morpho.org/faq/"
+      }
+    ]
   },
   {
     "slug": "sablier-v2",
-    "name": "Sablier V2",
+    "name": "Sablier Lockup",
     "category": "Streaming",
     "language": "Solidity",
     "chains": [
@@ -275,17 +430,65 @@
       "Base",
       "Polygon"
     ],
-    "repositoryUrl": "https://github.com/sablier-labs/v2-core",
-    "docsUrl": "https://docs.sablier.com",
-    "walkthroughUrl": "https://www.youtube.com/watch?v=Mh0akz5ybZ8&t=11s",
+    "repositoryUrl": "https://github.com/sablier-labs/lockup",
+    "docsUrl": "https://docs.sablier.com/guides/lockup/deployments",
     "summary": "Token streaming infrastructure for vesting and continuous payments, with stream lifecycle controls and schedule abstractions.",
     "learningFocus": [
       "stream accounting",
       "vesting schedules",
       "recipient permissions"
     ],
-    "trustStatus": "researching",
-    "verificationStage": "seeded"
+    "trustStatus": "audited",
+    "verificationStage": "verified",
+    "trustSummary": "Sablier Lockup is verified because the official audits repository tracks release-specific third-party reviews, and the SDK publishes machine-readable deployment manifests for Ethereum mainnet and supported L2s.",
+    "auditReports": [
+      {
+        "auditor": "Cantina",
+        "date": "2025-07-28",
+        "reportUrl": "https://raw.githubusercontent.com/sablier-labs/audits/main/lockup/v3.0/20250728_cantina.pdf"
+      },
+      {
+        "auditor": "Cantina",
+        "date": "2025-04-05",
+        "reportUrl": "https://raw.githubusercontent.com/sablier-labs/audits/main/lockup/v3.0/20250405_cantina.pdf"
+      },
+      {
+        "auditor": "Cantina",
+        "date": "2025-01-12",
+        "reportUrl": "https://raw.githubusercontent.com/sablier-labs/audits/main/lockup/v2.0/20250112_cantina.pdf"
+      }
+    ],
+    "deploymentAddresses": [
+      {
+        "chain": "Ethereum",
+        "address": "0xcF8ce57fa442ba50aCbC57147a62aD03873FfA73",
+        "sourceUrl": "https://raw.githubusercontent.com/sablier-labs/sdk/main/src/evm/releases/lockup/v3.0/deployments.ts"
+      },
+      {
+        "chain": "Arbitrum",
+        "address": "0xF12AbfB041b5064b839Ca56638cDB62fEA712Db5",
+        "sourceUrl": "https://raw.githubusercontent.com/sablier-labs/sdk/main/src/evm/releases/lockup/v3.0/deployments.ts"
+      },
+      {
+        "chain": "Base",
+        "address": "0xe261b366f231b12fcb58d6bbd71e57faee82431d",
+        "sourceUrl": "https://raw.githubusercontent.com/sablier-labs/sdk/main/src/evm/releases/lockup/v3.0/deployments.ts"
+      }
+    ],
+    "sourceLinks": [
+      {
+        "label": "Sablier lockup docs",
+        "url": "https://docs.sablier.com/guides/lockup/deployments"
+      },
+      {
+        "label": "Sablier SDK deployment manifest",
+        "url": "https://github.com/sablier-labs/sdk/blob/main/src/evm/releases/lockup/v3.0/deployments.ts"
+      },
+      {
+        "label": "Sablier audits repository",
+        "url": "https://github.com/sablier-labs/audits/blob/main/README.md"
+      }
+    ]
   },
   {
     "slug": "seaport",
@@ -417,15 +620,50 @@
       "Base"
     ],
     "repositoryUrl": "https://github.com/Uniswap/v3-core",
-    "docsUrl": "https://docs.uniswap.org/protocol/V3/introduction",
+    "docsUrl": "https://docs.uniswap.org/contracts/v3/reference/deployments/deployments",
     "summary": "Concentrated liquidity AMM design with ticks, positions, and price movement math that redefined DEX architecture.",
     "learningFocus": [
       "ticks and liquidity ranges",
       "position NFTs",
       "price math"
     ],
-    "trustStatus": "researching",
-    "verificationStage": "seeded"
+    "trustStatus": "audited",
+    "verificationStage": "verified",
+    "trustSummary": "This entry is verified because Uniswap publishes chain-specific deployment tables in the docs, includes core audit reports in the repo, and ships an explicit V3 bug bounty policy tied to the production contracts.",
+    "auditReports": [
+      {
+        "auditor": "Trail of Bits",
+        "date": "2021-03-23",
+        "reportUrl": "https://raw.githubusercontent.com/Uniswap/v3-core/main/audits/tob/audit.pdf"
+      },
+      {
+        "auditor": "ABDK",
+        "date": "2021-03-23",
+        "reportUrl": "https://raw.githubusercontent.com/Uniswap/v3-core/main/audits/abdk/audit.pdf"
+      }
+    ],
+    "deploymentAddresses": [
+      {
+        "chain": "Ethereum",
+        "address": "0x1F98431c8aD98523631AE4a59f267346ea31F984",
+        "sourceUrl": "https://raw.githubusercontent.com/Uniswap/docs/main/docs/contracts/v3/reference/deployments/Ethereum-Deployments.md"
+      }
+    ],
+    "bugBountyUrl": "https://github.com/Uniswap/v3-core/blob/main/bug-bounty.md",
+    "sourceLinks": [
+      {
+        "label": "Uniswap V3 Ethereum deployments",
+        "url": "https://github.com/Uniswap/docs/blob/main/docs/contracts/v3/reference/deployments/Ethereum-Deployments.md"
+      },
+      {
+        "label": "Uniswap V3 audit directory",
+        "url": "https://github.com/Uniswap/v3-core/tree/main/audits"
+      },
+      {
+        "label": "Uniswap V3 bug bounty",
+        "url": "https://github.com/Uniswap/v3-core/blob/main/bug-bounty.md"
+      }
+    ]
   },
   {
     "slug": "uniswap-v4",

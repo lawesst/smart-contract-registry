@@ -34,6 +34,15 @@ const requiredFields = [
   "trustStatus",
 ];
 
+const verificationFields = [
+  "trustSummary",
+  "auditReports",
+  "deploymentAddresses",
+  "bugBountyUrl",
+  "incidentHistory",
+  "sourceLinks",
+];
+
 export default function ContributePage() {
   return (
     <div className="min-h-screen">
@@ -46,12 +55,13 @@ export default function ContributePage() {
               Contribution flow
             </p>
             <h1 className="mt-4 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-              Help turn the seed registry into a real public reference layer.
+              Help expand the verified layer without losing breadth.
             </h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-muted">
               The repository is no longer just a markdown list. New submissions
-              should arrive as structured entries that can power search, detail
-              pages, future trust badges, and eventually onchain ranking data.
+              should arrive as structured entries that power search and detail
+              pages today, and strong entries should include the trust packet
+              needed to graduate from seeded to verified.
             </p>
           </section>
 
@@ -86,6 +96,20 @@ export default function ContributePage() {
                   </span>
                 ))}
               </div>
+
+              <h3 className="mt-8 text-lg font-semibold tracking-tight text-foreground">
+                Verification packet fields
+              </h3>
+              <div className="mt-4 flex flex-wrap gap-3">
+                {verificationFields.map((field) => (
+                  <span
+                    key={field}
+                    className="rounded-full border border-line bg-background px-4 py-2 font-mono text-sm text-muted"
+                  >
+                    {field}
+                  </span>
+                ))}
+              </div>
             </article>
 
             <article className="rounded-[2rem] border border-line/80 bg-panel p-7">
@@ -94,7 +118,8 @@ export default function ContributePage() {
               </h2>
               <div className="mt-4 space-y-4 text-sm leading-7 text-muted">
                 <p>
-                  Seed data now lives in <code>data/contracts.json</code>.
+                  Seed and verified data both live in{" "}
+                  <code>data/contracts.json</code>.
                 </p>
                 <p>
                   The schema lives in <code>schemas/contract.schema.json</code>.
@@ -104,8 +129,9 @@ export default function ContributePage() {
                   <code>docs/project-brief.md</code>.
                 </p>
                 <p>
-                  CI now validates the dataset before merge, so malformed or
-                  duplicate entries can be rejected automatically.
+                  CI now validates both structure and verification rules before
+                  merge, so malformed, duplicate, or half-verified entries can
+                  be rejected automatically.
                 </p>
               </div>
             </article>
@@ -113,14 +139,14 @@ export default function ContributePage() {
 
           <section className="rounded-[2rem] border border-line/80 bg-panel-strong p-7">
             <h2 className="text-2xl font-semibold tracking-tight text-foreground">
-              Next steps after the scaffold
+              What makes a strong submission
             </h2>
             <div className="mt-5 grid gap-4 md:grid-cols-2">
               {[
-                "Attach security metadata and trust badge criteria to every entry.",
-                "Add deploy addresses, onchain stats, and ranking signals.",
-                "Expand the schema to cover bug bounties, exploits, and audit dates.",
-                "Create a public PR template and contributor review checklist.",
+                "Attach at least one first-party audit, deployment, or security source instead of linking only the homepage.",
+                "Explain why the contract is worth studying in practical developer terms, not just protocol branding language.",
+                "Use exploit history only when the status can be justified with an official source.",
+                "Mark anything uncertain as still needing verification instead of overclaiming certainty.",
               ].map((step) => (
                 <div
                   key={step}
@@ -134,7 +160,7 @@ export default function ContributePage() {
             <div className="mt-6">
               <Link
                 href="/"
-                className="rounded-full bg-foreground px-5 py-3 text-sm font-medium text-background transition-colors hover:bg-accent"
+                className="rounded-full bg-accent px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-secondary"
               >
                 Back to registry
               </Link>

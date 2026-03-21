@@ -1,22 +1,28 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono, Space_Grotesk } from "next/font/google";
+import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({
+const geistSans = Geist({
   variable: "--font-space-grotesk",
   subsets: ["latin"],
 });
 
-const ibmPlexMono = IBM_Plex_Mono({
+const geistMono = Geist_Mono({
   variable: "--font-ibm-plex-mono",
   subsets: ["latin"],
   weight: ["400", "500"],
 });
 
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument-serif",
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
 export const metadata: Metadata = {
   title: "Smart Contract Registry",
   description:
-    "A curated, quality-verified reference layer for production Ethereum smart contracts.",
+    "A curated reference layer for production Ethereum smart contracts with verified audits, deployments, and trust notes.",
 };
 
 export default function RootLayout({
@@ -27,7 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${ibmPlexMono.variable} h-full scroll-smooth antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full bg-background text-foreground">
         {children}

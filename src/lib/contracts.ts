@@ -7,6 +7,18 @@ import type {
 
 export const categories = [...new Set(contracts.map((contract) => contract.category))];
 export const languages = [...new Set(contracts.map((contract) => contract.language))];
+export const chains = [
+  ...new Set(contracts.flatMap((contract) => contract.chains)),
+].sort((left, right) => left.localeCompare(right));
+export const trustStatusOptions: TrustStatus[] = [
+  "researching",
+  "audited",
+  "unaudited",
+  "exploit-history",
+];
+export const verifiedContracts = contracts.filter(
+  (contract) => contract.verificationStage === "verified",
+);
 
 export function getContractBySlug(slug: string): ContractRecord | undefined {
   return contracts.find((contract) => contract.slug === slug);
@@ -21,7 +33,7 @@ export function getTrustBadgeLabel(status: TrustStatus): string {
     case "exploit-history":
       return "Exploit History";
     case "researching":
-      return "Researching";
+      return "Needs Verification";
   }
 }
 
@@ -43,7 +55,7 @@ export function getVerificationStageLabel(stage: VerificationStage): string {
     case "verified":
       return "Verified Entry";
     case "seeded":
-      return "Seed Entry";
+      return "Seeded Entry";
   }
 }
 

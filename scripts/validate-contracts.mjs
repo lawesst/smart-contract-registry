@@ -46,6 +46,15 @@ for (const [index, contract] of contracts.entries()) {
     }
   }
 
+  if (
+    contract.verificationStage === "verified" &&
+    contract.trustStatus === "researching"
+  ) {
+    errors.push(
+      `Entry ${index + 1} (${contract.slug}): verified entries cannot keep the "researching" trust status.`,
+    );
+  }
+
   for (const [label, value, bucket] of [
     ["slug", contract.slug, seenSlugs],
     ["name", contract.name, seenNames],
@@ -55,6 +64,20 @@ for (const [index, contract] of contracts.entries()) {
       errors.push(`Duplicate ${label} detected: ${value}`);
     } else {
       bucket.add(value);
+    }
+  }
+
+  if (Array.isArray(contract.deploymentAddresses)) {
+    const seenChains = new Set();
+
+    for (const deployment of contract.deploymentAddresses) {
+      if (seenChains.has(deployment.chain)) {
+        errors.push(
+          `Entry ${index + 1} (${contract.slug}): duplicate deployment chain detected: ${deployment.chain}`,
+        );
+      } else {
+        seenChains.add(deployment.chain);
+      }
     }
   }
 }
