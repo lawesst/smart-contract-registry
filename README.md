@@ -4,6 +4,8 @@ Smart Contract Registry is a Next.js project for building a curated, quality-ver
 
 This repository is no longer a markdown list of links. It now ships a live MVP with search, filters, detail pages, schema-validated data, and a verified flagship layer backed by official audits, deployment sources, and trust notes.
 
+Live MVP: https://smart-contract-registry-rk9ncxh0p-mtuneccesarys-projects.vercel.app
+
 ## Current MVP
 
 The live MVP target for this repository is a public registry experience with:
